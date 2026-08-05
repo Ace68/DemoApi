@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/50 Modules/" />
+  <Folder Name="/50 Modules/Sales/">
+    <Project Path="Sales/Demo.Sales.Facade/Demo.Sales.Facade.csproj" />
+  </Folder>
+  <Folder Name="/50 Modules/Warehouse/">
+    <Project Path="Warehouse/Demo.Warehouse.Facade/Demo.Warehouse.Facade.csproj" />
+  </Folder>
+  <Folder Name="/90 Presentation/">
+    <Project Path="DemoApi/DemoApi.csproj" />
+  </Folder>
+</Solution>
