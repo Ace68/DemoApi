@@ -10,7 +10,7 @@ public static class ModuleExtensions
         foreach (var module in modules
                      .Where(m => m.IsEnabled))
         {
-            module.Register(builder.Services);
+            module.Register(builder);
             RegisteredModules.Add(module);
         }
 

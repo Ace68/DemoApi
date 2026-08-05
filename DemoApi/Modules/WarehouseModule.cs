@@ -6,11 +6,12 @@ namespace DemoApi.Modules;
 public class WarehouseModule : IModule
 {
     public bool IsEnabled => true;
+    public int Order => 0;
 
-    public IServiceCollection Register(IServiceCollection services)
+    public IServiceCollection Register(WebApplicationBuilder builder)
     {
-        services.AddWarehouseCollectionServices();
-        return services;
+        builder.Services.AddWarehouseCollectionServices();
+        return builder.Services;
     }
 
     public WebApplication Configure(WebApplication app)

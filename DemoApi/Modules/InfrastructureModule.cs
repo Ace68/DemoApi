@@ -1,30 +1,43 @@
-namespace DemoApi.Modules;
+﻿namespace DemoApi.Modules;
 
-public interface IModule
+/// <summary>
+/// Infrastructure Module for configuring the infrastructure services and dependencies in the application.
+/// </summary>
+public class InfrastructureModule : IModule
 {
     /// <summary>
     /// Indicates whether the module is enabled and should be registered in the application.
     /// </summary>
-    bool IsEnabled { get; }
+    public bool IsEnabled => true;
     /// <summary>
     /// Set the order in which the module should be registered in the application.
     /// Modules with lower order values will be registered before those with higher values.
     /// </summary>
-    int Order { get; }
-
+    public int Order => 0;
+    
     /// <summary>
     /// Registers the module's services and dependencies in the application's service collection.
     /// This method is called during the application startup process to configure the module's services.
     /// </summary>
     /// <param name="builder"></param>
     /// <returns></returns>
-    IServiceCollection Register(WebApplicationBuilder builder);
-    
+    public IServiceCollection Register(WebApplicationBuilder builder)
+    {
+        using var serviceProvider = builder.Services.BuildServiceProvider();
+        var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
+        // builder.Services.AddInfrastructure(loggerFactory, builder.Configuration);
+        
+        return builder.Services;
+    }
+
     /// <summary>
     /// Configures the module's middleware and request pipeline in the application.
     /// This method is called during the application startup process to set up the module's middleware and request handling logic.
     /// </summary>
     /// <param name="app"></param>
     /// <returns></returns>
-    WebApplication Configure(WebApplication app);
+    public WebApplication Configure(WebApplication app)
+    {
+        return app;
+    }
 }
