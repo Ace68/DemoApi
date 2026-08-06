@@ -10,10 +10,4 @@
       <PackageReference Include="Muflone" Version="10.2.2" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Acl\" />
-      <Folder Include="Entities\" />
-      <Folder Include="Messages\Events\" />
-    </ItemGroup>
-
 </Project>

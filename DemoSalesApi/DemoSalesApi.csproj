@@ -32,7 +32,6 @@
     <ItemGroup>
       <ProjectReference Include="..\Monitor\Demo.Host.Services\Demo.Host.Services.csproj" />
       <ProjectReference Include="..\Sales\Demo.Sales.Facade\Demo.Sales.Facade.csproj" />
-      <ProjectReference Include="..\Warehouse\Demo.Warehouse.Facade\Demo.Warehouse.Facade.csproj" />
     </ItemGroup>
 
     <ItemGroup>

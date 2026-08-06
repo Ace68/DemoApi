@@ -13,21 +13,11 @@ internal sealed class SalesOrderFacade(
     public async Task CreateSalesOrderAsync(RegisterOrderJson body, CancellationToken cancellationToken = default)
     {
         cancellationToken.ThrowIfCancellationRequested();
-
-        try
-        {
-            RegisterSalesOrder command = new(new SalesOrderId(Guid.CreateVersion7().ToString()),
-                new CodiceFiscale(body.CodiceFiscale), Guid.CreateVersion7());
         
-            await commandHandler.HandleAsync(command, cancellationToken);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex);
-            throw;
-        }
+        RegisterSalesOrder command = new(new SalesOrderId(Guid.CreateVersion7().ToString()),
+            new CodiceFiscale(body.CodiceFiscale), Guid.CreateVersion7());
         
-
+        await commandHandler.HandleAsync(command, cancellationToken);
     }
 
     public static int Somma(int addendo1, int addendo2)

@@ -11,9 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Acl\" />
-      <Folder Include="Entities\" />
-      <Folder Include="Messages\Events\" />
+      <ProjectReference Include="..\Demo.Sales.SharedKernel\Demo.Sales.SharedKernel.csproj" />
     </ItemGroup>
 
 </Project>

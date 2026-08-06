@@ -1,9 +1,9 @@
-﻿namespace DemoApi.Modules;
+﻿namespace DemoSalesApi.Modules;
 
 /// <summary>
-/// Infrastructure Module for configuring the infrastructure services and dependencies in the application.
+/// CORS Module.
 /// </summary>
-public class InfrastructureModule : IModule
+public class CorsModule : IModule
 {
     /// <summary>
     /// Indicates whether the module is enabled and should be registered in the application.
@@ -13,7 +13,7 @@ public class InfrastructureModule : IModule
     /// Set the order in which the module should be registered in the application.
     /// Modules with lower order values will be registered before those with higher values.
     /// </summary>
-    public int Order => 0;
+    public int Order => -1;
     
     /// <summary>
     /// Registers the module's services and dependencies in the application's service collection.
@@ -23,13 +23,17 @@ public class InfrastructureModule : IModule
     /// <returns></returns>
     public IServiceCollection Register(WebApplicationBuilder builder)
     {
-        using var serviceProvider = builder.Services.BuildServiceProvider();
-        var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
-        // builder.Services.AddInfrastructure(loggerFactory, builder.Configuration);
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("CorsPolicy", policy =>
+            {
+                policy.AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials().SetIsOriginAllowed(_ => true);
+            });
+        });
         
-        builder.AddServiceDefaults();
-        
-        return builder.Services;
+        return  builder.Services;
     }
 
     /// <summary>
@@ -40,6 +44,7 @@ public class InfrastructureModule : IModule
     /// <returns></returns>
     public WebApplication Configure(WebApplication app)
     {
+        app.UseCors("CorsPolicy");
         return app;
     }
 }

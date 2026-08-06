@@ -2,9 +2,7 @@
   <Folder Name="/30 Shared/">
     <Project Path="DemoApi.Shared/DemoApi.Shared.csproj" />
   </Folder>
-  <Folder Name="/50 Modules/">
-    <Project Path="Saga/DemoSaga/DemoSaga.csproj" />
-  </Folder>
+  <Folder Name="/50 Modules/" />
   <Folder Name="/50 Modules/Sales/">
     <Project Path="Sales/Demo.Sales.Domain/Demo.Sales.Domain.csproj" />
     <Project Path="Sales/Demo.Sales.Facade/Demo.Sales.Facade.csproj" />
@@ -12,16 +10,11 @@
     <Project Path="Sales/Demo.Sales.SharedKernel/Demo.Sales.SharedKernel.csproj" />
     <Project Path="Sales/Demo.Sales.Tests/Demo.Sales.Tests.csproj" />
   </Folder>
-  <Folder Name="/50 Modules/Warehouse/">
-    <Project Path="Warehouse/Demo.Warehouse.Facade/Demo.Warehouse.Facade.csproj" />
-  </Folder>
   <Folder Name="/90 Presentation/">
-    <Project Path="DemoApi.Tests/DemoApi.Tests.csproj" />
-    <Project Path="DemoApi/DemoApi.csproj" />
+    <Project Path="DemoSalesApi/DemoSalesApi.csproj" />
   </Folder>
   <Folder Name="/Solution Items/">
     <File Path="compose.yaml" />
   </Folder>
-  <Project Path="Monitor/Demo.Host.Services/Demo.Host.Services.csproj" />
-  <Project Path="Monitor/Demo.Host/Demo.Host.csproj" />
+  <Project Path="../Monitor/Demo.Host.Services/Demo.Host.Services.csproj" />
 </Solution>

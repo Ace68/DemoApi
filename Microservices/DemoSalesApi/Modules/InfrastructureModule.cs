@@ -1,4 +1,4 @@
-﻿namespace DemoApi.Modules;
+﻿namespace DemoSalesApi.Modules;
 
 /// <summary>
 /// Infrastructure Module for configuring the infrastructure services and dependencies in the application.
@@ -26,9 +26,9 @@ public class InfrastructureModule : IModule
         using var serviceProvider = builder.Services.BuildServiceProvider();
         var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
         // builder.Services.AddInfrastructure(loggerFactory, builder.Configuration);
-        
+
         builder.AddServiceDefaults();
-        
+       
         return builder.Services;
     }
 
