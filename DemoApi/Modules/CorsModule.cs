@@ -25,7 +25,7 @@ public class CorsModule : IModule
     {
         builder.Services.AddCors(options =>
         {
-            options.AddPolicy("BrewUpCorsPolicy", policy =>
+            options.AddPolicy("CorsPolicy", policy =>
             {
                 policy.AllowAnyMethod()
                     .AllowAnyHeader()
@@ -44,7 +44,7 @@ public class CorsModule : IModule
     /// <returns></returns>
     public WebApplication Configure(WebApplication app)
     {
-        app.UseCors("BrewUpCorsPolicy");
+        app.UseCors("CorsPolicy");
         return app;
     }
 }

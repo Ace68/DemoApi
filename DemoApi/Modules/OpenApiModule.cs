@@ -34,12 +34,12 @@ public class OpenApiModule : IModule
         document.Servers = [new OpenApiServer { Url = "/" }];
         document.Info = new OpenApiInfo
         {
-          Title = "BrewUp API",
+          Title = "Demo API",
           Version = "v1.0",
-          Description = "BrewUp API",
+          Description = "Demo API",
           Contact = new OpenApiContact
           {
-            Name = "BrewUp Team",
+            Name = "Demo Team",
           }
         };
 
@@ -77,7 +77,7 @@ public class OpenApiModule : IModule
     app.MapOpenApi();
     app.MapScalarApiReference(options =>
     {
-      options.WithTitle("BrewUp API")
+      options.WithTitle("Demo API")
         .WithTheme(ScalarTheme.None);
     });
 
