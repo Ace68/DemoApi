@@ -7,7 +7,7 @@ public static class WarehouseCollectionService
 {
     public static IServiceCollection AddWarehouseCollectionServices(this IServiceCollection services)
     {
-        services.AddScoped<IWarehouseService, WarehouseService>();
+        services.AddScoped<IWarehouseFacade, WarehouseFacade>();
         
         return services;
     }

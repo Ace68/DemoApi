@@ -11,6 +11,7 @@ public class SalesModule : IModule
     public IServiceCollection Register(WebApplicationBuilder builder)
     {
         builder.Services.AddSalesCollectionServices();
+        
         return builder.Services;
     }
 

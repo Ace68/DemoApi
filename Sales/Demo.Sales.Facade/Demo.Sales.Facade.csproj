@@ -15,4 +15,14 @@
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.10" />
     </ItemGroup>
 
+    <ItemGroup>
+        <InternalsVisibleTo Include="Demo.Sales.Tests" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Demo.Sales.Domain\Demo.Sales.Domain.csproj" />
+      <ProjectReference Include="..\Demo.Sales.Infrastructure\Demo.Sales.Infrastructure.csproj" />
+      <ProjectReference Include="..\Demo.Sales.SharedKernel\Demo.Sales.SharedKernel.csproj" />
+    </ItemGroup>
+
 </Project>

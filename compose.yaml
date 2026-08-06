@@ -1,0 +1,7 @@
+﻿services:
+  demoapi:
+    image: demoapi
+    build:
+      context: .
+      dockerfile: DemoApi/Dockerfile
+
